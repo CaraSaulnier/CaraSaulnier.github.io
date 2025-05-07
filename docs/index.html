@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="MeasurementsStyling.css">
+    <html lang = "en">
+        <head>
+            <title>Cara's SockCulator</title>
+            <script type="module" src="./Functions.js"></script>
+        </head>
+        <body class = "body">
+            <div class = "heading-div">
+                <h1 class = "heading">Welcome to Cara's SockCulator!</h1>
+            </div>
+            <div  class="menu">
+                <div class = "constructionSelection">
+                    <label for="construction">Select a construction type:</label>
+                    <select name="construction" id="construction" onchange="setSockDirection()">
+                        <option value="BottomUp">Bottom Up</option>
+                        <option value="TopDown">Top Down</option>
+                    </select>
+                </div>
+                <div class = "circumferenceInput">
+                    <label for="circum">Circumference around largest part of foot:</label>
+                    <input type = "number" min ="1" step = "0.1" id = "circum" value="1"> cm
+                </div>
+                <div class = "footLengthInput">
+                    <label for="lenfoot">Length of sole of foot:</label>
+                    <input type = "number" min ="1" step = "0.1" id = "lenfoot" value="1"> cm
+                </div>
+                <div class = "legLengthInput">
+                    <label for="lenleg">Length of how far up the leg the sock will go:</label>
+                    <input type = "number" min ="1" step = "0.1" id = "lenleg" value="1"> cm
+                </div>
+                <div class = "cuffLengthInput">
+                    <label for="lencuff">Desired length of cuff:</label>
+                    <input type = "number" min ="1" step = "0.1" id = "lencuff" value="1"> cm
+                </div>
+                <div class = "stsGauge">
+                    <label for="stspergauge">Stitch gauge:</label>
+                    <input type = "number" min ="1" step = "1" id = "stspergauge" value="1"> sts per
+                    <input type = "number" min ="1" step = "0.1" id = "lenstsgauge" value="1"> cm
+                </div>
+                <div class = "rowsGauge">
+                    <label for="rowspergauge">Row gauge:</label>
+                    <input type = "number" min ="1" step = "1" id = "rowspergauge" value="1"> rows per
+                    <input type = "number" min ="1" step = "0.1" id = "lenrowgauge" value="1"> cm
+                </div>
+                <div class = "selectEase">
+                    <label for="ease">Select desired ease:</label>
+                    <input type = "number" min = "90" max = "110" step = "1" id = "ease" value="95">%
+                </div>
+                <div class = "cuffSelection">
+                    <label for="cuff">Select a cuff type:</label>
+                    <select name="cuff" id="cuff">
+                        <option value="1x1 Rib">1x1 Rib</option>
+                        <option value="2x2 Rib">2x2 Rib</option>
+                        <option value="3x1 Rib">3x1 Rib</option>
+                        <option value="Half Twisted Rib">Half Twisted Rib</option>
+                        <option value="Picot Edge">Picot Edge</option>
+                        <option value="Two-Colour Rib">Two-Colour Rib</option>
+                    </select>
+                </div>
+                <div class = "heelSelection">
+                    <label for="heel">Select a heel type:</label>
+                    <select name="heel" id="heel">
+                        <option value="BoomerangHeel">Boomerang Heel</option>
+                        <option value="BUGussetHeel">Gusset Heel</option>
+                        <option value="SimpleShapedHeel">Simple Shaped Heel</option>
+                        <option value="WrapAndTurnHeel">Wrap and Turn</option>
+                    </select>
+                </div>
+                <div class = "toeSelection">
+                    <label for="toe">Select a toe type:</label>
+                    <select name="toe" id="toe">
+                        <option value="BUBandedToe">Banded Toe</option>
+                        <option value="BUBasicToe">Basic Toe</option>
+                        <option value="BUWedgeToe">Wedge Toe</option>
+                    </select>
+                </div>
+                
+                <div class="makePattern">
+                    <button type="button" class="button" onclick="generatePattern()">
+                        Make me a pattern!
+                    </button>
+                </div>
+            </div>
+
+            <pre id = "pattern" class ="pattern"></pre>
+
+        </body>
+    </html>
