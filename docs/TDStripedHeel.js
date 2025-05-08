@@ -13,14 +13,14 @@ export default class TDStripedHeel extends Heel{
 
     getNumRowsSole()
 	{
-        numRows = this.BIGGEST_PART_OF_HEEL - (this.numSts*2);
+        let numRows = this.BIGGEST_PART_OF_HEEL - (this.numSts*2);
         numRows += (this.numSts-4)/2;
 		return numRows;
 	}
 
     getNumRowsLeg()
 	{
-        numRows = (this.numSts/2)+1;
+        let numRows = (this.numSts/2)+1;
 		return numRows;
 	}
 
@@ -40,7 +40,7 @@ Next row (WS): With yarn A, p2tog, purl to endm turn, ${this.numSts} heel sts.
 Continue with yarn A.
 
 Step 3: Turning the heel.
-Row 1 (RS): Slip 1 st kntiwise, k${(this.numSts/2)+1}, ssk, k1, turn.
+Row 1 (RS): Slip 1 st knitwise, k${(this.numSts/2)+1}, ssk, k1, turn.
 Row 2: Slip 1 st purlwise, p5, p2tog, p1, turn.
 Row 3: Slip 1 st knitwise, knit to 1 st before the gap, ssk, k1, turn.
 Row 4: Slip 1 st purlwise, purl to 1 st before the gap, p2tog, p1, turn.

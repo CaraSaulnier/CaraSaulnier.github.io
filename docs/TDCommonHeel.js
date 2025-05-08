@@ -34,7 +34,7 @@ Repeat rows 1-2 until ${this.numStsSmallestPartHeel} sts remain.
 
 Step 3: Second half of heel.
 
-Row 1 (RS): Slip the first stitch then knit to the end, pick up and knit the slipped stitch from next row of first helf, turn.
+Row 1 (RS): Slip the first stitch then knit to the end, pick up and knit the slipped stitch from next row of first half, turn.
 Row 2: Slip the first stitch then purl to the end, pick up and purl the next slipped stitch from the first half, turn.
 
 Repeat these 2 rows until you have ${this.numSts} sts on your needle.

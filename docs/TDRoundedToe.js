@@ -9,8 +9,8 @@ export default class TDRoundedToe extends Toe{
 
     getToePattern()
     {
-        pattern = ``;
-        decreaseRound = 1;
+        let pattern = ``;
+        let decreaseRound = 1;
         if(this.numSts % 8 != 0)
         {
             this.endToeSts -= 4;
@@ -21,7 +21,7 @@ export default class TDRoundedToe extends Toe{
             decreaseRound++;
         }
         // Stitch decrease is a constant number
-        stitchDecrease = (this.endToeSts/8);
+        let stitchDecrease = (this.endToeSts/8);
         this.endToeSts -= stitchDecrease;
         pattern += `Decrease round ${decreaseRound}: (k6, k2tog) to end.[${this.endToeSts}]\n`+
         `Knit 6 rounds.\n\n`;
@@ -44,7 +44,7 @@ export default class TDRoundedToe extends Toe{
         decreaseRound++;
         this.endToeSts -= stitchDecrease;
         pattern += `Decrease round ${decreaseRound}: (k1, k2tog) to end.[${this.endToeSts}]\n`+
-        `Knit 1 rounds.\n\n`;
+        `Knit 1 round.\n\n`;
         decreaseRound++;
         this.endToeSts -= stitchDecrease;
         pattern += `Decrease round ${decreaseRound}: (k2tog) to end.[${this.endToeSts}]\n\n`;
@@ -56,6 +56,6 @@ export default class TDRoundedToe extends Toe{
 	{
         //number of rows is based on whether the number of sts is a multiple of 8 or only a multiple of 4
         // if it isn't a multiple of 8, an extra row is reequired to make it a multiple of 8
-		return numSts % 8 === 0 ?28:29;
+		return this.numSts % 8 === 0 ?28:29;
 	}
 }
