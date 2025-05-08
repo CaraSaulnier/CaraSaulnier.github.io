@@ -180,10 +180,10 @@ function generatePattern() {
                 toeSelection = 1;
                 break;
             case "TDFourPointToe":
-                toeSelection = 1;
+                toeSelection = 2;
                 break;
             case "TDRoundedToe":
-                toeSelection = 2;
+                toeSelection = 3;
                 break;
             case "TDWedgeToe":
                 toeSelection = 4;
