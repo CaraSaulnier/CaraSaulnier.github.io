@@ -76,6 +76,12 @@ function generatePattern() {
     const lengthStsGauge = parseFloat(document.getElementById('lenstsgauge').value);
     const lengthRowsGauge = parseFloat(document.getElementById('lenrowgauge').value);
     const ease = parseFloat(document.getElementById('ease').value) / 100;
+    if(isNaN(circumference) || isNaN(soleLength) || isNaN(legLength) || isNaN(cuffLength) || isNaN(stsPerGauge) || isNaN(rowsPerGauge)
+    || isNaN(lengthStsGauge) || isNaN(lengthRowsGauge) || isNaN(ease))
+    {
+        document.getElementById('pattern').innerText = 'error, at least one of your inputs is invalid.';
+        return;
+    }
     console.log(circumference);
     let cuffSelection = 0;
     switch(document.getElementById('cuff').value)
