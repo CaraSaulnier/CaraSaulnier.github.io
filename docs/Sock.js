@@ -30,7 +30,8 @@ export default class Sock{
 	{
 		this.stsGauge = stsPerGauge/lengthStsGauge;
 		this.rowGauge = rowsPerGauge/lengthRowsGauge;
-		this.numSts = Math.round((this.stsGauge * circumference)/4)*4;
+		this.circumference = circumference*ease;
+		this.numSts = Math.round((this.stsGauge * this.circumference)/4)*4;
 		this.numRowsSole = Math.round(soleLength * this.rowGauge);
 		this.numRowsLeg = Math.round(legLength*this.rowGauge);
 
@@ -39,7 +40,6 @@ export default class Sock{
 		this.soleLength = soleLength;
 		this.legLength = legLength;
 		this.cuffLength = cuffLength;
-		this.circumference = circumference*ease;
 		this.lengthStsGauge = lengthStsGauge;
 		this.lengthRowsGauge = lengthRowsGauge;
 		this.footCircum = circumference;
