@@ -77,9 +77,9 @@ ${this.toe.getToePattern()}
 Work ${this.numRowsSole - this.heel.getNumRowsSole() - this.toe.getNumRows()} rows. You will now work the heel.
 
 ${this.heel.getHeelPattern()}
-Work ${this.numRowsLeg - this.cuff.getNumRows() - this.heel.getNumRowsLeg()} rows. You will now work the cuff.
+Work ${this.numRowsLeg - this.cuff.getNumRows() - this.heel.getNumRowsLeg()} rows. ${this.cuff.getNumRows() > 0? `You will now work the cuff.
 
-${this.cuff.getCuffPattern()}
+${this.cuff.getCuffPattern()} `:``}
 Cast off all stitches.
 
 ${this.cuff.constructor.name ==="PicotEdgeCuff"?`Fold cuff down ` + this.cuff.getNumRows() + ` rows, and then sew down.`:``}

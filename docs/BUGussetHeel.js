@@ -31,7 +31,7 @@ Rows 5-16: Repeat rows 3-4 six more times.
 Row 17: MDS, purl to first DS, purl next 6 DS (purl both legs as if p2tog), p2tog (next DS and next plain stitch), turn, leaving ${(this.numSts/4)-1} gusset sts unworked.
 Row 18: Sl1 wyib, knit to first DS, knit next 6 DS (knit both lefs as if k2tog), k2tog(next DS and next plain stitch), turn, leaving {(this.numSts/4)-1} gusset sts unworked.
 
-Step 4: Heel flap.
+Step 3: Heel flap.
 Row 1 (WS): Sl1 wyif, p${this.numSts-2}, p2tog, turn.
 Row 2: Sl1 wyib, (k1, sl1 wyib) ${(this.numSts-2)/2} times, ssk, turn.
 Repeat rows 1-2 until you have ${this.numSts*2}sts.

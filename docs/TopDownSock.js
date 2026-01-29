@@ -90,9 +90,9 @@ export default class TopDownSock extends Sock{
 		return `
 ${this.stsPerGauge} sts per ${this.lengthStsGauge}cm, ${this.rowsPerGauge} rows per ${this.lengthRowsGauge}cm.
 Foot circumference: ${this.footCircum}cm, foot length: ${this.soleLength}cm, sock length: ${this.legLength}cm, cuff length: ${this.cuffLength}cm.
-Cast on ${this.numSts} sts. You will now work the cuff.
+Cast on ${this.numSts} sts. ${this.cuff.getNumRows() > 0? `You will now work the cuff.
 
-${this.cuff.getCuffPattern()}
+${this.cuff.getCuffPattern()}` : ``}
 Work ${this.numRowsLeg - this.cuff.getNumRows() - this.heel.getNumRowsLeg()} rows. You will now work the heel.
 
 ${this.heel.getHeelPattern()}

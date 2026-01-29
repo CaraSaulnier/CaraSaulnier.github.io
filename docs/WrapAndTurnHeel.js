@@ -34,7 +34,7 @@ Row 4: Purl ot 1 st before the last wrapped st of the heel, work as from ** to *
 Repeat rows 3 - 4 until ${this.numStsSmallestPartHeel} sts remain unworked in the middle of the heel, between the wrapped stitches.
 There are now ${(this.numSts-this.numStsSmallestPartHeel)/2} wrapped stitches on each side of the unworked stitches.
 
-Step 2: Second half of heel.
+Step 3: Second half of heel.
 Row 1 (RS): Knit to the first wrapped st, pick up wrapped st and knit it together with st on needle, W&T the next st (this st now has 2 wraps).
 Row 2: Purl to first wrapped st pick up wrapped st and purl it together with st on needle, W&T the next st (this st now has 2 wraps).
 Row 3: Knit to st with double wrap, pick up both wraps and knit them together with st on needle, W&T the next st.
