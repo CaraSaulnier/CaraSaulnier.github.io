@@ -1,44 +1,67 @@
 import Heel from './Heel.js';
 export default class TDCommonHeel extends Heel{
 
+    BIGGEST_PART_OF_HEEL;
+
     constructor(numSts){
         super(numSts);
-		this.CIRCUM_TO_SMALLEST_PART_OF_HEEL_RATIO = 0.3235644258;
-		this.numStsSmallestPartHeel = Math.floor(this.numSts * this.CIRCUM_TO_SMALLEST_PART_OF_HEEL_RATIO);
-		this.numStsSmallestPartHeel = Math.round(this.numStsSmallestPartHeel/4)*4;
+        this.CIRCUM_TO_SMALLEST_PART_OF_HEEL_RATIO = 0.5755438842;
+        this.numStsSmallestPartHeel = Math.floor(this.numSts * this.CIRCUM_TO_SMALLEST_PART_OF_HEEL_RATIO);
+		this.numStsSmallestPartHeel = Math.round(this.numStsSmallestPartHeel/2)*2;
+        this.BIGGEST_PART_OF_HEEL = this.numSts * 2 + this.numStsSmallestPartHeel - 2;
 	}
 
     getNumRowsSole()
 	{
-		return this.numSts - this.numStsSmallestPartHeel;
+		let numRows = this.BIGGEST_PART_OF_HEEL - (this.numSts*2);
+        numRows += (this.numSts-4)/2;
+		console.log(this.numSts);
+		return numRows;
 	}
 
     getNumRowsLeg()
 	{
-		return this.numSts - this.numStsSmallestPartHeel;
+		let numRows = this.numSts-6;
+        numRows += (this.numSts-4)/2;
+		return numRows;
 	}
 
     getHeelPattern()
 	{
-		return `
-Step 1: Set-up.
-Slip the next ${this.numSts}sts onto 1 DPN, leaving the other stitches on their original needle(s).
-Work on heel stitches only.
+		return `Step 1: Set-up.
 
-Step 2: First half of heel.
+Slip the next  ${this.numSts}  sts onto 1 DPN.
+Step 2: Heel flap.
+Heel row 1 (RS): Knit all sts.
+Heel row 2: K3, purl to last 3 sts, k3.
+Repeat heel row 1-2 for a further ${(this.numSts/2)-4} times.
+You will now have a rectangle with ${(this.numSts/2)-3} garter stitch ridges along each side edge.
 
-Row 1 (RS): Slip the first stitch, then knit to the last 3 heel sts, k2tog, k1, turn.
-Row 2: Slip the first stitch then purl to the last 3 sts, p2tog, p1, turn.
+Step 3: Turning the heel.
+Row 1 (RS): Slip 1 st kntiwise, k${(this.numSts/2)+1}, ssk, k1, turn.
+Row 2: Slip 1 st purlwise, p5, p2tog, p1, turn.
+Row 3: Slip 1 st knitwise, knit to 1 st before the gap, ssk, k1, turn.
+Row 4: Slip 1 st purlwise, purl to 1 st before the gap, p2tog, p1, turn.
+${(this.numSts%4==0)?`Repeat rows 3-4 until ${this.numStsSmallestPartHeel+2}sts remain.
+Next row: Slip 1 st knitwise, knit 1 st before the gap, ssk, turn.
+Next row: Slip 1 st purlwise, purl to 1 st before the gap, p2tog, turn.
 
-Repeat rows 1-2 until ${this.numStsSmallestPartHeel} sts remain.
+` :	
+`Repeat rows 3-4 until ${this.numStsSmallestPartHeel}  sts remain.
 
-Step 3: Second half of heel.
-
-Row 1 (RS): Slip the first stitch then knit to the end, pick up and knit the slipped stitch from next row of first half, turn.
-Row 2: Slip the first stitch then purl to the end, pick up and purl the next slipped stitch from the first half, turn.
-
-Repeat these 2 rows until you have ${this.numSts} sts on your needle.
-Redistribute the stitches onto their original needles.
+`}
+Step 4: Picking up gusset sts.
+With RS facing, knit across remaining  ${this.numStsSmallestPartHeel}sts.
+With next DPN, pick up and knit ${(this.numSts/2)-2}sts along the first edge of the heel flap.
+Pick up an extra before the instep sts by working M1R.
+Place stitch marker 1, knit next ${this.numSts} instep sts. Place stitch marker 2.
+Pick up and knit1 st from gap before heel flap by working M1L.
+With next DPN, pick up and knit ${(this.numSts/2)-2}sts along the next edge of heel flap.
+You now have ${this.BIGGEST_PART_OF_HEEL} sts. Place marker to mark the start of round.
+Step 5: Shaping the gusset.
+Round 1: Knit to 3 sts before stitch marker 1, k2tog, k1, slip marker, k ${this.numSts}sts across to stitch marker 2, slip marker, k1, ssk, knit to end of round.
+Round 2: Knit all stitches and slip all markers.
+Repeat rounds 1-2 until ${this.numSts*2}sts remain, ending after round 1.
 `;
 	}
 }
