@@ -76,13 +76,48 @@ function generatePattern() {
     const lengthStsGauge = parseFloat(document.getElementById('lenstsgauge').value);
     const lengthRowsGauge = parseFloat(document.getElementById('lenrowgauge').value);
     const ease = parseFloat(document.getElementById('ease').value) / 100;
-    if(isNaN(circumference) || isNaN(soleLength) || isNaN(legLength) || isNaN(cuffLength) || isNaN(stsPerGauge) || isNaN(rowsPerGauge)
-    || isNaN(lengthStsGauge) || isNaN(lengthRowsGauge) || isNaN(ease))
+    let invalidInput = false;
+    let errorPrint = '';
+    if(isNaN(circumference))
     {
-        document.getElementById('pattern').innerText = 'error, at least one of your inputs is invalid.';
+        invalidInput = true;
+        errorPrint += 'error, circumference value is not a number.\n';
+    }
+    if(isNaN(soleLength))
+    {
+        invalidInput = true;
+        errorPrint += 'error, length of sole of foot is not a number.\n';
+    }
+    if(isNaN(legLength))
+    {
+        invalidInput = true;
+        errorPrint += 'error, length of sock up the leg is not a number.\n';
+    }
+    if(isNaN(cuffLength))
+    {
+        invalidInput = true;
+        errorPrint += 'error, length of cuff is not a number.\n';
+    }
+    if(isNaN(stsPerGauge) || isNaN(lengthStsGauge))
+    {
+        invalidInput = true;
+        errorPrint += 'error, one or both values for stitch gauge is not a number.\n';
+    }
+    if(isNaN(rowsPerGauge) || isNaN(lengthRowsGauge))
+    {
+        invalidInput = true;
+        errorPrint += 'error, one or both values for row gauge is not a number.\n';
+    }
+    if(isNaN(ease))
+    {
+        invalidInput = true;
+        errorPrint += 'error, ease value is not a number.\n';
+    }
+    if(invalidInput)
+    {
+        document.getElementById('pattern').innerText = errorPrint;
         return;
     }
-    console.log(circumference);
     let cuffSelection = 0;
     switch(document.getElementById('cuff').value)
     {
